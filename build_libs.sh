@@ -184,6 +184,8 @@ cd ..
 #insmod dvbsoftwareca.ko  # It will create ca0 device for adapter0
 # cd ..
 
+chmod 777 -R ../deb/ ../libs/
+
 timeend=$(date +"%s")
 timedelta=$(($timeend-$timestart))
 
