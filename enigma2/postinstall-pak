@@ -1,0 +1,10 @@
+#!/bin/sh
+
+chmod -R 777 \
+/etc/enigma2 \
+/etc/tuxbox \
+/usr/lib/enigma2 \
+/usr/share/enigma2
+
+exit 0;
+
