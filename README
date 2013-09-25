@@ -22,16 +22,16 @@ February, 2013
 
 
 ------------------------------
-Building and running enigma2-pc
+Building and running enigma2pc
 ------------------------------
 
 1) Create a work directory and enter it:
-mkdir enigma2-pc
-cd enigma2-pc
+mkdir enigma2pc.work
+cd enigma2pc.work
 
-2) Download enigma2-pc sources and build scripts:
-git clone https://github.com/pingflood/enigma2-pc.git
-cd enigma2-pc/
+2) Download enigma2pc sources and build scripts:
+git clone https://github.com/pingflood/enigma2pc.git
+cd enigma2pc/
 
 3) Build and install libraries:
 sudo ./build_libs.sh
@@ -43,8 +43,8 @@ sudo ./build_enigma2pc.sh
 enigma2
 
 Note:
-Libraries will be downloaded and compiled at ../libs ("workdirectory"/libs)
-and all generated packages will be saved at ../deb ("workdirectory"/deb)
+Libraries will be downloaded and compiled at ../libs (enigma2pc.work/libs)
+and all generated packages will be saved at ../deb (enigma2pc.work/deb)
 
 
 
