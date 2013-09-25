@@ -6,9 +6,9 @@ September, 2013
 - Updated scripts: Build in Xubuntu 13.04
 - Updated scripts: Using github mirror for all sources
 - Updated scripts: Reorder and cleaned up
-- Note: This repository is frozen and it's not meant to be in sync with original repos and it will be kept as is.
-  It is not ready for use as your main E2 for PC if you want to have it working as a STB, but it may help if you want to develop your plugins using your PC.
-  If you need an up-to-date openpliPC, follow the original work by nobody9 at https://github.com/nobody9
+- Note: This repository is frozen. It's not meant to be in sync with original repos and it will be kept as is.
+  It may not be ready for use as your main E2 for PC if you want to have it working as a STB, but it may be useful if you want to develop your plugins using your PC.
+  If you need an up-to-date and active development of openpliPC, follow the original work by nobody9 at https://github.com/nobody9 and in the forums linked below.
 
 February, 2013
 
