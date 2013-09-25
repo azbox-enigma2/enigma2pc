@@ -11,7 +11,6 @@ E2DIR_ETC_PREFIX=""			# contains /etc, /var, /share
 
 BACKUP_E2="${E2DIR_ETC_PREFIX}/etc/enigma2 etc/tuxbox/*.xml ${E2DIR_ETC_PREFIX}/etc/tuxbox/nim_sockets ${E2DIR_ETC_PREFIX}/share/enigma2/xine.conf"
 
-
 DO_BACKUP=0
 DO_RESTORE=0
 DO_CONFIGURE=1
@@ -74,28 +73,22 @@ while [ -n "$1" ]; do
 	esac
 done
 
-if [ "$DO_BACKUP" -eq "1" ]; then
-	e2_backup
-fi
+# if [ "$DO_BACKUP" -eq "1" ]; then
+# 	e2_backup
+# fi
 
 mkdir -p ../deb/
 
-# ----------------------------------------------------------------------
+echo "-----------------------------------------"
+echo "Build and install enigma2pc"
+echo "-----------------------------------------"
 
 cd enigma2
 
 if [ "$DO_CONFIGURE" -eq "1" ]; then
-	echo "--------------------------------------"
-	echo "configuring enigma2pc"
-	echo "--------------------------------------"
-
 	autoreconf -i
 	./configure --prefix=$E2DIR_ETC_PREFIX --exec_prefix=$E2DIR_EXEC_PREFIX --datarootdir=$E2DIR_EXEC_PREFIX/share --includedir=$E2DIR_EXEC_PREFIX/include --with-xlib --with-debug
 fi
-
-echo "--------------------------------------"
-echo "build enigma2pc, please wait..."
-echo "--------------------------------------"
 
 checkinstall \
 	--default $DO_MAKEINSTALL \
@@ -112,16 +105,12 @@ checkinstall \
 	make -j"$DO_PARALLEL" install
 
 if [ $? -eq 0 ]; then
-
-	# strip binary
-	# strip $E2DIR_EXEC_PREFIX/bin/enigma2
-
 	# removing pre-compiled py files
 	find $E2DIR_EXEC_PREFIX/lib/enigma2/python/ -name "*.py[oc]" -exec rm {} \;
 
-	if [ "$DO_RESTORE" -eq "1" ]; then
-		e2_restore
-	fi
+	# if [ "$DO_RESTORE" -eq "1" ]; then
+	# 	e2_restore
+	# fi
 
 	timeend=$(date +"%s")
 	timedelta=$(($timeend-$timestart))

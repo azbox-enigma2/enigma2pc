@@ -16,7 +16,7 @@ echo "Starting at $(date)"
 timestart=$(date +"%s")
 
 echo "-----------------------------------------"
-echo "*** INSTALL REQUIRED PACKAGES ***"
+echo "Installing required packages"
 echo "-----------------------------------------"
 REQPKG="autoconf automake build-essential debhelper gettext subversion mercurial git autopoint \
 	libdvdnav-dev libfreetype6-dev libfribidi-dev \
@@ -46,16 +46,8 @@ git clone https://github.com/pingflood/xine-lib.git
 cd xine-lib
 
 if [ "$DO_CONFIGURE" -eq "1" ]; then
-	echo "-----------------------------------------"
-	echo "configuring xine-lib"
-	echo "-----------------------------------------"
-
 	./autogen.sh --disable-xinerama --disable-musepack --prefix=/usr
 fi
-
-echo "--------------------------------------"
-echo "build xine-lib, please wait..."
-echo "--------------------------------------"
 
 checkinstall \
 	--default $DO_MAKEINSTALL \
