@@ -6,12 +6,9 @@ September, 2013
 - Updated scripts: Build in Xubuntu 13.04
 - Updated scripts: Using github mirror for all sources
 - Updated scripts: Reorder and cleaned up
-- Note: This repository is frozen and it's not meant to be in sync with original repos and
-  it will be kept as is.
-  It is not ready for use as your main E2 for PC if you want to have it working as a STB, but
-  it will help if you want to develop your plugins using your PC.
-  If you need an up-to-date openpliPC, follow the original work
-  by nobody9 at https://github.com/nobody9
+- Note: This repository is frozen and it's not meant to be in sync with original repos and it will be kept as is.
+  It is not ready for use as your main E2 for PC if you want to have it working as a STB, but it may help if you want to develop your plugins using your PC.
+  If you need an up-to-date openpliPC, follow the original work by nobody9 at https://github.com/nobody9
 
 February, 2013
 
@@ -25,24 +22,29 @@ February, 2013
 
 
 ------------------------------
-Building and running enigma2pc
+Building and running enigma2-pc
 ------------------------------
 
-1) Download build scripts:
+1) Create a work directory and enter it:
+mkdir enigma2-pc
+cd enigma2-pc
+
+2) Download enigma2-pc sources and build scripts:
 git clone https://github.com/pingflood/enigma2-pc.git
 cd enigma2-pc/
 
-2) Build and install libraries:
+3) Build and install libraries:
 sudo ./build_libs.sh
 
-3) Build and install enigma2:
+4) Build and install enigma2:
 sudo ./build_enigma2pc.sh
 
-4) Run Enigma2 with:
+5) Run Enigma2 with:
 enigma2
 
-Note: All generated packages will be saved at ./deb
-
+Note:
+Libraries will be downloaded and compiled at ../libs ("workdirectory"/libs)
+and all generated packages will be saved at ../deb ("workdirectory"/deb)
 
 
 
